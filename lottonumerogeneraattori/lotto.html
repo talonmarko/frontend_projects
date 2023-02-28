@@ -120,11 +120,8 @@ function init(){
         i++;
     }
 
-   //console.log("mahdolliset numerot ovat " + possibleNumbers);
    /* shuffle just generated numbers */
    possibleNumbers.sort((a, b) => Math.random() - .5);
- 
-   //console.log("sekoitetut numerot ovat " + possibleNumbers);
 
    var result = new Array;
 
@@ -143,10 +140,6 @@ function init(){
    /* sort numbers from smaller to bigger */
    result.sort((a, b) => a - b);
 
-   //console.log("Lopullinen tulos on " + result);
-//    var lottorivi = document.getElementById("lotto");
-//        lottorivi.innerHTML = result;
-
 	var elems = new Array;
 		elems.push("one","two","three","four","five","six","seven","eight");
 
@@ -156,40 +149,6 @@ function init(){
 		e++;
 	}
 }
-
-/*function randomizer(){
-	var pallot = document.getElementsByTagName("p");
-
-	var numbers = new Array;
-	var i = 0;
-	
-	var y=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40];
-	var x = 0;
-		for(var x = 0; x < 40; x++){
-            if(y[x] == x){
-                //add = false;
-				console.log("VIRHE");
-        }
-    }
-	
-	
-	while(i<=7){
-		var random = Math.floor(Math.random()* 40) + 1;
-			numbers.push(random);
-		i++;
-	}
-
-	numbers.sort((a,b)=>a-b);
-	console.log(numbers);
-
-	var a = 0;
-	while(a<=7){
-		pallot[a].innerText = numbers[a];
-		a++;
-	}
-
-}
-*/
 
 </script>
     
