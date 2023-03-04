@@ -28,8 +28,8 @@
             font-size: 40px;
             color: white;
             font-family: sans-serif;
-            top: 75px;
-            left: -210px;
+            top: 30px;
+            left: -180px;
             -webkit-text-stroke: 2px black;
 
         }
@@ -39,13 +39,13 @@
             font-size: 40px;
             color: white;
             font-family: sans-serif;
-            top: -15px;
+            top: -50px;
             left: 230px; 
             -webkit-text-stroke: 2px black;
 
         }
 
-        #scorebox {
+        #scoreboard {
             position:relative;
             display: row;
             padding-top: 25px;
@@ -57,21 +57,23 @@
             border: 2px solid white;
             height: 250px;
             width: 250px;
-            left: 350px;
+			top: -75px;
+            left: 450px;
             background-color: #202020;
             font-family: digital-7;
             font-size: 250px;
             text-align: center;
             color: red;
         }
-
-        #visitor {
-            position: relative;
+		
+		#visitor {
+            position: absolute;
             border-radius: 25%;
             border: 2px solid white;
             height: 250px;
             width: 250px;
-            left: 800px;
+			top: -75px;
+            left: 850px;
             background-color: #202020;
             font-family: digital-7;
             font-size: 250px;
@@ -79,22 +81,40 @@
             color: red;
         }
 
-
         .scorebuttonsforhome {
             position: absolute;
-            top: 300px;
-            left: 360px;
+            top: 200px;
+            left: 510px;
         }
-
-
-        .scorebuttonsforvisitor {
+		
+		.scorebuttonsforvisitor {
             position: absolute;
-            top: 300px;
-            right: 310px;
+            top: 200px;
+            left: 920px;
         }
+
     </style>
+	
     <script>
-        
+		function updateScoreboardforhome(input) {
+			var scoreboard = document.getElementById('home');
+			var currentScore = parseInt(home.innerText);
+
+			if (input === 1 || input === 2 || input === 3) {
+				var newScore = currentScore + input;
+				home.innerText = newScore;
+			}
+		}
+		
+		function updateScoreboardforvisitor(input) {
+			var scoreboard = document.getElementById('visitor');
+			var currentScore = parseInt(visitor.innerText);
+
+			if (input === 1 || input === 2 || input === 3) {
+				var newScore = currentScore + input;
+				visitor.innerText = newScore;
+			}
+		}
 
 
     </script>
@@ -103,24 +123,22 @@
 
 <body>
 
-    <div id="scorebox">
-        <div id="home">80</div>
-        <div id="visitor">80</div>
-        <div id=""></div>
-        <div id=""></div>
+    <div id="scoreboard">
+        <div id="home">0</div>
+		<div id="visitor">0</div>
 
         <div class="scorebuttonsforhome">
-            <button class="btn" style="width:75px;height:50px;font-size:40px;margin-right:2px;" type="button" onClick="homescore+1">+1</button>
-            <button class="btn" style="width:75px;height:50px;font-size:40px;margin-right:2px;" type="button" onClick="homescore+2">+2</button>
-            <button class="btn" style="width:75px;height:50px;font-size:40px;margin-right:2px;" type="button" onClick="homescore+3">+3</button>
+            <button onclick="updateScoreboardforhome(1)">+1</button>
+			<button onclick="updateScoreboardforhome(2)">+2</button>
+			<button onclick="updateScoreboardforhome(3)">+3</button>
+		</div>
+		
+		<div class="scorebuttonsforvisitor">
+            <button onclick="updateScoreboardforvisitor(1)">+1</button>
+			<button onclick="updateScoreboardforvisitor(2)">+2</button>
+			<button onclick="updateScoreboardforvisitor(3)">+3</button>
         </div>
 
-        <div class="scorebuttonsforvisitor">
-            <button class="btn" style="width:75px;height:50px;font-size:40px;margin-right:2px;" type="button" onClick="visitorscore+1">+1</button>
-            <button class="btn" style="width:75px;height:50px;font-size:40px;margin-right:2px;" type="button" onClick="visitorscore+2">+2</button>
-            <button class="btn" style="width:75px;height:50px;font-size:40px;margin-right:2px;" type="button" onClick="visitorscore+3">+3</button>
-        </div>
-    </div>
 </body>
 
 </html>
